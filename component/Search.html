@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #searchInput {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #resultList {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .productItem {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .productItem img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="searchInput" placeholder="Search for products..." oninput="searchProducts()">
+
+<ul id="resultList"></ul>
+
+<script>
+    // Sample list of products with details
+    const products = [
+        { name: "lin", price: "$300", image: "https://placekitten.com/100/100" },
+        { name: "thay", price: "$50", image: "https://placekitten.com/100/101" },
+        { name: "teong", price: "$20", image: "https://placekitten.com/100/102" },
+        { name: "k.pheak", price: "$15", image: "https://placekitten.com/100/103" },
+        { name: "kim hay", price: "$25", image: "https://placekitten.com/100/104" },
+        { name: "heang", price: "$10", image: "https://placekitten.com/100/105" },
+        { name: "rika", price: "$50", image: "https://placekitten.com/100/106" }
+    ];
+
+    function searchProducts() {
+        const searchInput = document.getElementById("searchInput");
+        const resultList = document.getElementById("resultList");
+
+        // Get the search query and convert to lowercase for case-insensitive search
+        const query = searchInput.value.toLowerCase();
+
+        // Filter products based on the search query
+        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+
+        // Clear previous results
+        resultList.innerHTML = "";
+
+        // Display filtered product results
+        filteredProducts.forEach(product => {
+            const listItem = document.createElement("li");
+            listItem.className = "productItem";
+
+            const imageElement = document.createElement("img");
+            imageElement.src = product.image;
+            listItem.appendChild(imageElement);
+
+            const detailsElement = document.createElement("div");
+            detailsElement.innerHTML = `<h3>${product.name}</h3><p>${product.price}</p>`;
+            listItem.appendChild(detailsElement);
+
+            resultList.appendChild(listItem);
+        });
+    }
+</script>
+
+</body>
+</html>

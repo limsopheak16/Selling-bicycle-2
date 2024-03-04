@@ -226,7 +226,51 @@ nav {
   line-height:2;
   
  }
+ #demo{
+  margin: 20px 15rem;
+  font-size: 2rem;
+}
+.card-container{
+  width: 80%;
+  display: grid;
+  margin: 2rem auto;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+}
+ .borderpro{
+  width: 400px; 
+  height: 45vh; 
+  border-radius: 15px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  
+ }
+ .imagepro img{
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
  
+ }
+ .textpro{
+  width: 100%;
+  height: 5vh;
+  text-align: left;
+  line-height: 1;
+ }
+ .textvalue{
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+ }
+#filter-container{
+  padding: 20px 400px;
+ 
+}
+#type{
+  padding: 20px;
+  font-size: 20px;
+}
  
  /* responsive for moble */
   @media screen and (max-width:700px) {
@@ -304,3 +348,9 @@ nav {
 
 
   }
+/* add filter */
+.filter{
+  width: 100%;
+  height: 100px;
+  background-color: #3498db;
+}
