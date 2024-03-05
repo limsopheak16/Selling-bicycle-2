@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="d-d.css">
+    <title>Drob-Down</title>
+</head>
+<body>
+    <div class="container">
+       <div class="logo">
+        <div class="drob-down">
+            <button class="type">
+                Type
+                <button onclick="togglemenu()" class="prev-btn"><i class="arrow left"></i></button>
+            </button>
+            <div class="list" id="mene">
+               <div class="list-bar">
+                <ul>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                </ul>
+               </div>
+            </div>
+        </div>
+        <div class="drob-down1">
+            <button class="type">
+                Condition
+                <button onclick="togmenu()" class="prev-btn"><i class="arrow left"></i></button>
+            </button>
+            <div class="list1" id="menu">
+               <div class="list-bar1">
+                <ul>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                </ul>
+               </div>
+            </div>
+        </div>
+        <div class="drob-down2">
+            <button class="type">
+                Discount
+                <input type="checkbox" name="" id="">
+            </button>
+        </div>
+       </div>
+    </div>
+    <script>
+        let mene = document.getElementById("mene");
+        let menu = document.getElementById("menu");
+
+        function togglemenu(){
+            mene.classList.toggle("open-menu");
+            
+        }
+        function togmenu(){
+            menu.classList.toggle("open-menu1");
+        }
+    </script>
+</body>
+</html>
